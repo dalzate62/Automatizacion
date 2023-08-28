@@ -14,9 +14,9 @@ public class utestReguistroPasoUnoTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                SendKeys.of("kuy").into(utestReguistroUI.TXT_NOMBRE),
-                SendKeys.of("bf").into(utestReguistroUI.TXT_APELLIDO),
-                SendKeys.of("fz@zx.com").into(utestReguistroUI.TXT_EMAIL),
+                SendKeys.of("ss").into(utestReguistroUI.TXT_NOMBRE),
+                SendKeys.of("ff").into(utestReguistroUI.TXT_APELLIDO),
+                SendKeys.of("aa@cc.com").into(utestReguistroUI.TXT_EMAIL),
                 SelectFromOptions.byVisibleText("October").from(utestReguistroUI.SELECT_MES),
                 SelectFromOptions.byVisibleText("12").from(utestReguistroUI.SELECT_DIA),
                 SelectFromOptions.byVisibleText("1998").from(utestReguistroUI.SELECT_ANO),
