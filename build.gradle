@@ -34,7 +34,7 @@ dependencies {
     implementation group: 'org.apache.poi', name: 'poi', version: '3.17'
     implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
 
-    implementation 'net.serenity-bdd:serenity-ensure:3.2.0'
+    //implementation 'net.serenity-bdd:serenity-ensure:3.2.0'
 
 
 

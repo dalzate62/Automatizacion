@@ -12,12 +12,20 @@ import net.serenitybdd.screenplay.actions.SendKeys;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class utestReguistroPasoCuatroTask implements Task {
+
+    private final String contrasena;
+    private final String confContrasena;
+
+    public utestReguistroPasoCuatroTask(String contrasena,String confContrasena){
+        this.contrasena = contrasena;
+        this.confContrasena = confContrasena;
+    }
     @Override
     public <T extends Actor> void performAs(T actor) {
         EsperaImplicita espera = new EsperaImplicita();
         actor.attemptsTo(
-                SendKeys.of("123456789A-Raul34567").into(utestReguistroUI.TXT_CONTRASENA),
-                SendKeys.of("123456789A-Raul34567").into(utestReguistroUI.TXT_VERIFICACIONCONTRASENA),
+                SendKeys.of(contrasena).into(utestReguistroUI.TXT_CONTRASENA),
+                SendKeys.of(confContrasena).into(utestReguistroUI.TXT_VERIFICACIONCONTRASENA),
                 CheckCheckbox.of(utestReguistroUI.CHK_TERMINOSCONDICIONES),
                 CheckCheckbox.of(utestReguistroUI.CHK_PRIVACIDAD),
                 Click.on(utestReguistroUI.BTN_SIGUIENTECUATRO)
@@ -25,7 +33,7 @@ public class utestReguistroPasoCuatroTask implements Task {
         espera.esperasImplicitas(5);
     }
 
-    public static Performable utestReguistroPasoCuatroTask(){
-        return instrumented(utestReguistroPasoCuatroTask.class);
+    public static Performable utestReguistroPasoCuatroTask(String contrasena, String confContrasena){
+        return instrumented(utestReguistroPasoCuatroTask.class,contrasena,confContrasena);
     }
 }
